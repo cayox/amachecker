@@ -1,12 +1,9 @@
-import requests
 import re
 from bs4 import BeautifulSoup
-import threading
 import logging
-
-logging.basicConfig(level=logging.DEBUG)
 from requests_toolbelt.threaded import pool
 
+logging.basicConfig(level=logging.DEBUG)
 BASE_URL = "https://www.amazon.de/gp/product/"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
