@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "amachecker"
+version = "0.1.0"
+description = ""
+authors = ["Nico Päller <n.p.98@hotmail.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit = "^1.29.0"
+pandas = "^2.1.4"
+beautifulsoup4 = "^4.12.2"
+requests-toolbelt = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
