@@ -7,12 +7,90 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-streamlit = "^1.29.0"
 pandas = "^2.1.4"
 beautifulsoup4 = "^4.12.2"
 requests-toolbelt = "^1.0.0"
+pyqt6 = "^6.6.1"
 
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.2.0"
+black = "^24.1.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Same as Black.
+line-length = 88
+
+target-version = "py311"
+
+[tool.ruff.lint]
+# https://docs.astral.sh/ruff/rules/
+select = [
+    "F",
+    "E",
+    "W",
+    "I",
+    "N",
+    "D",
+    "UP",
+    "ANN",
+    "S",
+    "BLE",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "FA",
+    "ISC",
+    "ICN",
+    "G",
+    "INP",
+    "PIE",
+    "T20",
+    "PYI",
+    "RSE",
+    "RET",
+    "SLF",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    "ARG",
+    "TD",
+    "PL",
+    "FLY",
+    "TRY",
+    "PERF",
+    "RUF",
+    "DJ"
+]
+ignore = [
+    "D100",
+    "D104",
+    "D102",
+    "D107",
+    "ANN00",
+    "ANN10", # ignore type annotation for self
+    "ANN204", # ignore return type annotation for init
+    "E501", # Line too Long -> covered by black
+    "S311", # Non cryptographinc generators
+    "TRY003", # long messages outside of exception class
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+
+[tool.ruff.lint.flake8-annotations]
+suppress-dummy-args = true
+suppress-none-returning = true
+mypy-init-return = true
+allow-star-arg-any = true
+
+[tool.black]
+line-length = 88
