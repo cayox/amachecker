@@ -10,7 +10,8 @@ from PyQt6 import QtCore, QtWidgets
 from amachecker.export_reader import export_asins_from_csv
 from amachecker.product_page_checker import check_pages
 
-from .thread import run_in_thread
+from amachecker.gui.thread import run_in_thread
+from amachecker.gui.style import STYLE
 
 log = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-
+STYLE = """
 /*
 accent: #ef233c
 off accent: #d90429
@@ -73,5 +73,4 @@ QScrollBar::add-line, QScrollBar::sub-line {
     width: 0px;
     height: 0px;
 }
-
-
+"""
